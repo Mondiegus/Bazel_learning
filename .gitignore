@@ -1,4 +1,4 @@
-# Prerequisites
+Run echo Hello, world!# Prerequisites
 *.d
 
 # Compiled Object files
@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+bazel-Bazel_learning
+bazel-bin
+bazel-out
+bazel-testlogs
