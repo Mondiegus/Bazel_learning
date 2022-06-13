@@ -4,7 +4,6 @@ cc_binary(
     name = "ch2",
     srcs = glob([
         "source/*.cpp",
-        "source/**/*.cpp",
     ]),
     includes = [
         "source",
