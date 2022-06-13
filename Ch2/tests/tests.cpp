@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <01.h>
 #include <02.h>
+#include <03.h>
 
 TEST(ch2, assert_true)
 {
@@ -52,4 +53,11 @@ TEST(ch2, t02_failed)
     MilesToMetersConverter converter(0.1);
     int value = converter.getValueInMeters();
     ASSERT_NE(value, 185.2);
+}
+
+TEST(ch2, t03_passed)
+{
+    Poem poem;
+    ASSERT_EQ(poem.getFirstLine(), "Entliczek petliczek");
+    ASSERT_EQ(poem.getSecondLine(), "Czerwony stoliczek");
 }

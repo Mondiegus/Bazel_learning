@@ -14,6 +14,7 @@ cc_library(
         "source",
         "source/01",
         "source/02",
+        "source/03",
     ],
     linkopts = ["-pthread"],
     visibility = ["//visibility:public"],
@@ -30,6 +31,7 @@ cc_binary(
         "source",
         "source/01",
         "source/02",
+        "source/03",
     ],
     deps = [
         ":ch2",
