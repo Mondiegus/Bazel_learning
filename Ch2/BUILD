@@ -15,6 +15,9 @@ cc_library(
         "source/01",
         "source/02",
         "source/03",
+        "source/04",
+        "source/05",
+        "source/06",
     ],
     linkopts = ["-pthread"],
     visibility = ["//visibility:public"],
@@ -22,17 +25,6 @@ cc_library(
 
 cc_binary(
     name = "ch2_bin",
-    srcs = glob([
-        "source/*.cpp",
-        "source/**/*.cpp",
-    ]),
-
-    includes = [
-        "source",
-        "source/01",
-        "source/02",
-        "source/03",
-    ],
     deps = [
         ":ch2",
     ],
@@ -48,9 +40,6 @@ cc_test(
     srcs = glob(
         ["tests/*.cpp"],
     ),
-    includes = [
-        "source/01",
-    ],
     deps = [
         "@com_google_googletest//:gtest_main",
         ":ch2"
