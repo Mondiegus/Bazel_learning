@@ -60,4 +60,5 @@ void Student::printData()
     cout << "Surname: " << surname << ", " << names << endl;
     cout << "Degree: " << (proposedDegree - lowerDegree) << endl;
     cout << "Age: " << age << endl;
+    getchar();
 }

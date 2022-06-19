@@ -1,31 +1,33 @@
 #pragma once
-#include <stdio.h>
-#include <iostream>
+#include <string>
 
-class BmiCalc
+using namespace std;
+
+class StudentCpp
 {
 public:
-    BmiCalc();
-    BmiCalc(double _pounds, double _foot, double _inches) : pounds(_pounds), foot(_foot), inches(_inches){};
-    void printBmi();
-    void calcWeight();
-    void calcHeight();
-    void calcBmi();
-    double getKg() { return kg; };
-    double getMeters() { return meters; };
-    double getBmi() { return bmi; };
-    ~BmiCalc(){};
+    StudentCpp(char *_names, char *_surname, int _proposedDegree, int _age);
+    StudentCpp(string _names, string _surname, int _proposedDegree, int _age);
+    StudentCpp();
+    void setNamesByUser(char *_names);
+    void setSurnameByUser(char *_surname);
+    void setNamesByUser(string *_names);
+    void setSurnameByUser(string *_surname);
+
+    void setAgeByUser(int *_age);
+    void setDegreeByUser(int *_proposedDegree);
+
+    string getName() { return names; };
+    string getSurname() { return surname; };
+    int getAge() { return age; };
+    int getDegree() { return proposedDegree; };
+    void printData();
+    ~StudentCpp(){};
 
 private:
-    double pounds;
-    double foot;
-    double inches;
-
-    double kg;
-    double meters;
-    double bmi;
-
-    const double poundsToKg = 2.2;
-    const double footToInches = 12.0;
-    const double inchesToMeters = 0.0254;
+    string names = "";
+    string surname = "";
+    int proposedDegree = 0;
+    int age = 0;
+    const int lowerDegree = 1;
 };

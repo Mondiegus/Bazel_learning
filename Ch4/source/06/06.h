@@ -1,20 +1,26 @@
-// BORING will be done in the future, 
+#pragma once
 
-// #pragma once
+#include <stdio.h>
+#include <iostream>
+#include <string>
 
-// #include <stdio.h>
-// #include <iostream>
+using namespace std;
 
-// using namespace std;
+class Cookieeeees
+{
+public:
+    struct Batonik
+    {
+        string name;
+        double weight;
+        uint16_t calories;
+    };
 
-// class CustomClock
-// {
-// public:
-//     CustomClock();
-//     void printTime();
-//     ~CustomClock(){};
+    Cookieeeees();
+    void printCookieeeees();
+    ~Cookieeeees(){};
 
-// private:
-//     int hours;
-//     int minutes;
-// };
+private:
+    struct Batonik batoniki[3];
+    const int cookiesNumb = 3;
+};
