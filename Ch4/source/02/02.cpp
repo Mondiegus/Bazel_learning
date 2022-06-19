@@ -1,33 +1,63 @@
 #include <02.h>
+#include <iostream>
+#include <string.h>
 
 using namespace std;
 
-BmiCalc::BmiCalc()
+StudentCpp::StudentCpp(char *_names, char *_surname, int _proposedDegree, int _age) : proposedDegree(_proposedDegree), age(_age)
 {
-    cout << "Please provide weight in pounds: " << endl;
-    cin >> pounds;
-    cout << "Please provide height in foot and inches: " << endl;
-    cin >> foot;
-    cin >> inches;
+    names = _names;
+    surname = _surname;
 }
 
-void BmiCalc::calcWeight()
+StudentCpp::StudentCpp()
 {
-    kg = pounds / poundsToKg;
+    cout << "What is your name? ";
+    setNamesByUser(&names);
+    cout << "What is your surname? ";
+    setSurnameByUser(&surname);
+    cout << "How old are You? ";
+    setAgeByUser(&age);
+
+    do  
+    {
+        if (proposedDegree == 0)
+        {
+            cout << "What degree do you want? ";
+            setDegreeByUser(&proposedDegree);
+        }
+        else
+        {
+            cout << "Degree need to be higher than 1 and lower than 6. What degree do you want? ";
+            setDegreeByUser(&proposedDegree);
+        }
+
+    } while (!(proposedDegree > 1 || proposedDegree <= 6));
 }
 
-void BmiCalc::calcHeight()
+void StudentCpp::setNamesByUser(string *_names)
 {
-    inches = inches + (foot * footToInches);
-    meters = inches * inchesToMeters;
+    getline(cin, *_names);
 }
 
-void BmiCalc::calcBmi()
+void StudentCpp::setSurnameByUser(string *_surname)
 {
-    bmi = kg / (meters * meters);
+    getline(cin, *_surname);
 }
 
-void BmiCalc::printBmi()
+void StudentCpp::setAgeByUser(int *_age)
 {
-    cout << "BMI is: " << bmi << endl;
+    cin >> (*_age);
+}
+
+void StudentCpp::setDegreeByUser(int *_proposedDegree)
+{
+    cin >> (*_proposedDegree);
+}
+
+void StudentCpp::printData()
+{
+    cout << "Surname: " << surname << ", " << names << endl;
+    cout << "Degree: " << (proposedDegree - lowerDegree) << endl;
+    cout << "Age: " << age << endl;
 }

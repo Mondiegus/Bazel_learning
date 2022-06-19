@@ -14,8 +14,22 @@ void t01()
     student.printData();
 }
 
+void t02()
+{
+    StudentCpp student;
+    student.printData();
+}
+
+void t06()
+{
+    Cookieeeees cookieeeees;
+    cookieeeees.printCookieeeees();
+}
+
 int main()
 {
     t01();
+    t02();
+    t06();
     return 0;
 }
