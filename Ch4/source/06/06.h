@@ -6,18 +6,20 @@
 
 using namespace std;
 
+struct Batonik
+{
+    string name;
+    double weight;
+    uint16_t calories;
+};
+
 class Cookieeeees
 {
 public:
-    struct Batonik
-    {
-        string name;
-        double weight;
-        uint16_t calories;
-    };
-
     Cookieeeees();
+    Cookieeeees(Batonik* _batoniki);
     void printCookieeeees();
+    Batonik *getStruct() { return batoniki; }
     ~Cookieeeees(){};
 
 private:
