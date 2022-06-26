@@ -29,7 +29,7 @@ TEST(ch4, t01_failed)
     ASSERT_NE(calculateSumOfNumbers.calcSum(), 44);
 }
 
-TEST(ch4, t02_passed)
+TEST(ch4, t06_passed)
 {
     int _books[3][12];
     for (int i = 0; i < 3; i++)
@@ -44,7 +44,7 @@ TEST(ch4, t02_passed)
     ASSERT_EQ(soldBooks.numberOfSoldBooks(), 36);
 }
 
-TEST(ch4, t02_failed)
+TEST(ch4, t06_failed)
 {
     int _books[3][12];
     for (int i = 0; i < 3; i++)
@@ -56,5 +56,5 @@ TEST(ch4, t02_failed)
     }
 
     SoldBooks soldBooks(_books, 3);
-    ASSERT_EQ(soldBooks.numberOfSoldBooks(), -5);
+    ASSERT_NE(soldBooks.numberOfSoldBooks(), -5);
 }
