@@ -2,6 +2,7 @@
 #include <01.h>
 #include <02.h>
 #include <06.h>
+#include <10.h>
 
 TEST(ch4, assert_true)
 {
@@ -72,4 +73,23 @@ TEST(ch4, t06_failed)
 
     ASSERT_EQ(cookieeeees.getStruct()[0].name, "mars");
     ASSERT_NE(cookieeeees.getStruct()[0].weight, 2);
+}
+
+
+TEST(ch4, t10_passed)
+{
+    array<double, 3> result = {1,2,3};
+    SprintCompetition sprintCompetition(result);
+    sprintCompetition.calculateAverageValue();
+
+    ASSERT_EQ(sprintCompetition.calculateAverageValue(), 2);
+}
+
+TEST(ch4, t10_failed)
+{
+    array<double, 3> result = {1,2,3};
+    SprintCompetition sprintCompetition(result);
+    sprintCompetition.calculateAverageValue();
+
+    ASSERT_NE(sprintCompetition.calculateAverageValue(), 6);
 }

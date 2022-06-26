@@ -5,6 +5,7 @@
 #include <04.h>
 #include <05.h>
 #include <06.h>
+#include <10.h>
 
 using namespace std;
 
@@ -26,10 +27,17 @@ void t06()
     cookieeeees.printCookieeeees();
 }
 
+void t10()
+{
+    SprintCompetition sprintCompetition;
+    sprintCompetition.printSprintCompetition();
+}
+
 int main()
 {
     t01();
     t02();
     t06();
+    t10();
     return 0;
 }
