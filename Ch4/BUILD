@@ -18,6 +18,7 @@ cc_library(
         "source/04",
         "source/05",
         "source/06",
+        "source/10",
     ],
     linkopts = ["-pthread"],
     visibility = ["//visibility:public"],
