@@ -9,8 +9,22 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
+<<<<<<< Updated upstream
+        "string": "cpp"
+=======
         "string": "cpp",
         "iostream": "cpp",
-        "chrono": "c"
+        "chrono": "c",
+        "xutility": "c",
+        "vector": "c",
+        "deque": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "regex": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp"
+>>>>>>> Stashed changes
     }
 }
