@@ -1,38 +1,50 @@
 #include <06.h>
 
-SoldBooks::SoldBooks()
+CharityAccount::CharityAccount()
 {
-    for (int i = 0; i < NumberOfYears; i++)
-    {
-        for (int j = 0; j < NumberOfMonths; j++)
-        {
-            cout << "Put number of sold books in " << i+1 << ". year in " << months[j] << ": " << endl;
-            cin >> soldBooks[i][j];
-        }
-    }
-
+    cout << "Put the number of new users: ";
+    cin >> numberOfUsers;
+    users = new Users[numberOfUsers];
+    logUsers();
 }
 
-SoldBooks::SoldBooks(int _soldBooks[][12], int years)
+CharityAccount::CharityAccount(struct Users _users[], int _size)
 {
-    for (int i = 0; i < NumberOfYears; i++)
+    users = new Users[_size];
+    numberOfUsers = _size;
+    for (size_t i = 0; i < _size; i++)
     {
-        for (int j = 0; j < NumberOfMonths; j++)
-        {
-            soldBooks[i][j] = _soldBooks[i][j];
-        }
+        users[i].name = _users[i].name;
+        users[i].money = _users[i].money;
+        assignGroup(users, i);
     }
 }
 
-int SoldBooks::numberOfSoldBooks()
+void CharityAccount::logUsers()
 {
-    int sum = 0;
-    for (int i = 0; i < NumberOfYears; i++)
+    for (int i = 0; i < numberOfUsers; i++)
     {
-        for (int j = 0; j < NumberOfMonths; j++)
-        {
-            sum += soldBooks[i][j];
-        }
+        cout << "Please provide the name: ";
+        cin >> users[i].name;
+        cout << "Please provide the amount of money: ";
+        cin >> users[i].money;
+        assignGroup(users, i);
     }
-    return sum;
+}
+
+void CharityAccount::printUsers()
+{
+    cout << "SUPER USERS:" << endl;
+    for (auto i = superUsers.begin(); i < superUsers.end(); i++)
+    {
+        cout << users[*i].name << endl;
+    }
+
+    cout << endl
+         << "USERS:" << endl;
+
+    for (auto i = normalUsers.begin(); i < normalUsers.end(); i++)
+    {
+        cout << users[*i].name << endl;
+    }
 }

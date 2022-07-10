@@ -14,9 +14,11 @@ void t01()
 
 void t06()
 {
-    SoldBooks soldBooks;
-    cout << "In last 3 years we have sold " << soldBooks.numberOfSoldBooks() << " books" << endl;
+    CharityAccount charityAccount;
+    cout << "The users are: " << endl;
+    charityAccount.printUsers();
 }
+
 
 void t10()
 {
@@ -26,7 +28,7 @@ void t10()
 int main()
 {
     t01();
-    // t06();
+    t06();
     // t10();
     return 0;
 }

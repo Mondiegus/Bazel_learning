@@ -30,20 +30,21 @@ TEST(ch4, t01_failed)
     ASSERT_NE(readChars.getSize(), tab.size());
 }
 
-// TEST(ch4, t06_passed)
-// {
-//     int _books[3][12];
-//     for (int i = 0; i < 3; i++)
-//     {
-//         for (int j = 0; j < 12; j++)
-//         {
-//             _books[i][j] = 1;
-//         }
-//     }
+TEST(ch4, t06_passed)
+{
+    struct Users tab[] = 
+    {
+        {"aa", 12345},
+        {"bb", 1},
+        {"cc", 9999.99},
+    };
 
-//     SoldBooks soldBooks(_books, 3);
-//     ASSERT_EQ(soldBooks.numberOfSoldBooks(), 36);
-// }
+    CharityAccount charityAccount(tab, 3);
+
+    ASSERT_EQ(charityAccount.numberOfCharityAccount(), 3);
+    ASSERT_TRUE(charityAccount.isSuperUser(0));
+    ASSERT_EQ(charityAccount.getUserMoney(0), 12345);
+}
 
 // TEST(ch4, t06_failed)
 // {
