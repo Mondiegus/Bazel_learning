@@ -1,5 +1,15 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 
+filegroup(
+  name = "originFile",
+  srcs = glob(
+    [
+        "**/**/*.txt",
+        "**/**/**/*.txt",
+        ]
+  ),
+)
+
 cc_library(
     name = "ch6",
     srcs = glob([
@@ -17,6 +27,7 @@ cc_library(
         "source/10",
     ],
     linkopts = ["-pthread"],
+    data = [":originFile"],
     visibility = ["//visibility:public"],
 )
 
@@ -25,6 +36,7 @@ cc_binary(
     deps = [
         ":ch6",
     ],
+    data = [":originFile"],
     linkopts = ["-pthread"],
     visibility = ["//visibility:public"],
 )

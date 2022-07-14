@@ -1,20 +1,21 @@
 #pragma once
 
 #include <stdio.h>
-#include <iostream>
-#include <string>
-#include <array>
+#include <fstream>
+#include <ICharityAccount.h>
 
 using namespace std;
 
-class PrintTree
+class CharityAccountFile : public ICharityAccount
 {
 public:
-    PrintTree();
-    PrintTree(int _numberOfRows) {};
-    int getAstrixInRowNumber(int row);
-    ~PrintTree(){};
+    CharityAccountFile();
+    CharityAccountFile(string path);
+    void printUsers() override;
+    ~CharityAccountFile(){};
 
 private:
-    int numberOfRows = 0;
+    ifstream file;
+    string filename;
+    void logUsers() override;
 };

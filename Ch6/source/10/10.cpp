@@ -1,18 +1,61 @@
 #include <10.h>
+#include <filesystem>
 
-PrintTree::PrintTree()
+CharityAccountFile::CharityAccountFile()
 {
-    cout << "Please provide number of rows" << endl;
-    cin >> numberOfRows;
-    
-    for (int y = 1; y <= numberOfRows; y++)
+    cout << "Put the file name: ";
+    cin >> filename;
+    std::cout << "Current path is " << current_path() << '\n'; // (1)
+    cout<< "Filename: " << filename << endl;
+    file.open(filename);
+    while (!file.is_open())
     {
-        for (int i = numberOfRows - y; i > 0; i--)
-            cout << ".";
+        cout << "Wrong name, try to put the file name again: ";
+        cin >> filename;
+        file.open(filename) ;
+    }
+    logUsers();
+}
 
-        for (int j = 0; j < y; j++)
-            cout << "*";
+CharityAccountFile::CharityAccountFile(string path)
+{
+    // users = new Users[_size];
+    // numberOfUsers = _size;
+    // for (size_t i = 0; i < _size; i++)
+    // {
+    //     users[i].name = _users[i].name;
+    //     users[i].money = _users[i].money;
+    //     assignGroup(users, i);
+    // }
+}
 
-        cout << endl;
+void CharityAccountFile::logUsers()
+{
+    if(file.good())
+    {
+        file >> numberOfUsers;
+    }
+    for (size_t i = 0; i < numberOfUsers; i++)
+    {
+        getline(file, users[i].name);
+        file >> users[i].money;
+        assignGroup(users, i);
+    }
+}
+
+void CharityAccountFile::printUsers()
+{
+    cout << "SUPER USERS:" << endl;
+    for (auto i = superUsers.begin(); i < superUsers.end(); i++)
+    {
+        cout << users[*i].name << endl;
+    }
+
+    cout << endl
+         << "USERS:" << endl;
+
+    for (auto i = normalUsers.begin(); i < normalUsers.end(); i++)
+    {
+        cout << users[*i].name << endl;
     }
 }

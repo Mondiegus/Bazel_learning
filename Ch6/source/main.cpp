@@ -9,7 +9,7 @@ void t01()
 {
     ReadChars readChars;
     cout << "Result of this table is: ";
-    readChars.printLetters(); 
+    readChars.printLetters();
 }
 
 void t06()
@@ -19,16 +19,18 @@ void t06()
     charityAccount.printUsers();
 }
 
-
 void t10()
 {
-    PrintTree printTree;
+    CharityAccountFile charityAccountFile;
+    cout << "The users are: " << endl;
+    charityAccountFile.printUsers();
 }
 
 int main()
 {
-    t01();
-    t06();
-    // t10();
+    // t01();
+    // t06();
+    t10();
+ 
     return 0;
 }
