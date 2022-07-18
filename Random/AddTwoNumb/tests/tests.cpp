@@ -28,10 +28,10 @@ TEST(ListNode, ListNode_00)
     ListNode *b = new ListNode(5, new ListNode(6, new ListNode(4)));
     Solution solution;
     ListNode *d = solution.addTwoNumbers(a, b);
-    // ASSERT_EQ(a->val, 2);
-    // ASSERT_EQ(b->next->val, 6);
-    // ASSERT_EQ(c->val, 6);
-    // ASSERT_EQ(listLength(a), 3);
-    // ASSERT_EQ(listLength(b), 3);
-    // ASSERT_EQ(listLength(c), 3);
+    ASSERT_EQ(a->val, 2);
+    ASSERT_EQ(b->next->val, 6);
+    ASSERT_EQ(c->val, 6);
+    ASSERT_EQ(listLength(a), 3);
+    ASSERT_EQ(listLength(b), 3);
+    ASSERT_EQ(listLength(c), 3);
 }
