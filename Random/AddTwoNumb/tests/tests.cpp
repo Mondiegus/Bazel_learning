@@ -19,7 +19,7 @@ TEST(ListNode, assert_true)
 
 TEST(ListNode, assert_false)
 {
-    ASSERT_EQ(2, 3);
+    ASSERT_NE(2, 3);
 }
 
 TEST(ListNode, ListNode_00)
