@@ -11,6 +11,7 @@
         "utility": "cpp",
         "string": "cpp",
         "iostream": "cpp",
-        "chrono": "c"
+        "chrono": "c",
+        "xutility": "cpp"
     }
 }
