@@ -69,3 +69,9 @@ void MotorVoltageReading::check_min_value(int32_t voltage)
         min = voltage;
     }
 }
+
+int main()
+{
+    MotorVoltageReading voltage_reading;
+    return 0;
+}
