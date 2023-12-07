@@ -1,7 +1,5 @@
+#pragma once
 #include <cstdint>
-
-#define INT32_MAX 2147483647
-#define INT32_MIN -(2147483648)
 
 class MotorVoltageReading
 {
@@ -12,7 +10,8 @@ private:
     int32_t max = INT32_MIN;
     int32_t min = INT32_MAX;
     int32_t average = 0;
-
+    bool alarm = false;
+    
     void check_max_values(int32_t voltage);
     void check_min_value(int32_t voltage);
 

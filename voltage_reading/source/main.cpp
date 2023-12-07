@@ -32,6 +32,7 @@ void MotorVoltageReading::get_voltage_stats(int32_t *min, int32_t *max, int32_t 
 void MotorVoltageReading::set_overvoltage_level(int32_t threshold)
 {
     this->threshold = threshold;
+    alarm = false;
 }
 
 /// Check if over voltage has been detected
@@ -40,11 +41,19 @@ void MotorVoltageReading::set_overvoltage_level(int32_t threshold)
 bool MotorVoltageReading::check_overvoltage(int32_t *max)
 {
     bool ret = false;
-    if (gen_max > threshold)
+    if(!alarm)
     {
-        ret = true;
-        *max = gen_max;
-        gen_max = INT32_MIN;
+        if (gen_max > threshold)
+        {
+            ret = true;
+            *max = gen_max;
+            alarm = true;
+            gen_max = INT32_MIN;
+        }
+        else 
+        {
+            // nothing to do
+        }
     }
     return ret;
 }
